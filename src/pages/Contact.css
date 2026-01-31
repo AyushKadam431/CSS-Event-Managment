@@ -1,0 +1,146 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  padding-top: 240px;
+  padding-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.section .l1 {
+  font-size: clamp(30px, 5vw, 55px);
+  text-align: center;
+  padding-top: 70px;
+  width: 100%;
+  margin: clamp(20px, 3vw, 40px) 0;
+  font-weight: bold;
+}
+
+.contact-card {
+  background-color: #c42323;
+  height: 100%;
+  padding: clamp(15px, 2vw, 30px);
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: white;
+  font-size: clamp(26px, 4vw, 40px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: clamp(20px, 3vw, 30px);
+  color: white;
+  font-weight: bold;
+}
+
+.label1 {
+  font-size: clamp(15px, 2vw, 20px);
+  color: white;
+}
+
+.getintouch {
+  border-radius: 20px;
+  height: auto;
+  min-height: 40px;
+}
+
+textarea {
+  background-color: #dd8c8c;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: clamp(14px, 2vw, 16px);
+  min-height: 150px;
+}
+
+.b1 {
+  background-color: #b70404;
+  border: none;
+  color: white;
+  padding: clamp(8px, 1.5vw, 10px) clamp(15px, 2vw, 20px);
+  margin-top: 40px;
+  font-size: clamp(16px, 2vw, 20px);
+  border-radius: 25px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#ticketNumber {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: bold;
+}
+
+/* ==================== RESPONSIVE MEDIA QUERIES ==================== */
+@media (max-width: 992px) {
+  .section {
+    padding-top: 180px;
+  }
+  .contact-card {
+    padding: clamp(10px, 2vw, 20px);
+  }
+  .textarea {
+    width: 100%;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 150px;
+  }
+  h2 {
+    font-size: clamp(22px, 4vw, 32px);
+  }
+  .label {
+    font-size: clamp(18px, 3vw, 25px);
+  }
+  .label1 {
+    font-size: clamp(14px, 2vw, 18px);
+  }
+  .b1 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding-top: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contact-card {
+    border-radius: 15px;
+    padding: 15px;
+  }
+  h2 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+  .label {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+  .label1 {
+    font-size: clamp(13px, 3vw, 16px);
+  }
+  textarea {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://drambikarathi.com/wp-content/uploads/2022/11/qw3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #b70404;
+  opacity: 0.46;
+  z-index: -1;
+}
+
+.f1 {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  min-height: 630px;
+  background: #b70404;
+  margin: 20px auto;
+  border-radius: 30px;
+  padding: 90px 30px 30px;
+  color: white;
+}
+
+.l1 {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+select {
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+input {
+  background: #d9d9d9;
+  opacity: 0.42;
+}
+
+select {
+  background: #7a0000;
+  color: white;
+}
+
+input[type="button"] {
+  background: #c42323;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+span {
+  font-size: 13px;
+  color: white;
+  height: 18px;
+  display: block;
+}
+
+.back-button {
+  background: #c42323;
+  color: white;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}

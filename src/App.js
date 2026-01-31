@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 
-function App() {
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import AboutUS from "./Page/AboutUS";
+import ContactUs from "./pages/ContactUS";
+import Gallery from "./pages/Gallery";
+import EventCreation from "./pages/EventCreation";
+
+/* ================= LAYOUT ================= */
+function Layout({ children }) {
+  const location = useLocation();
+  const hideNavbarFooter =
+    location.pathname === "/login" || location.pathname === "/register";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {!hideNavbarFooter && <Navbar />}
+      {children}
+      {!hideNavbarFooter && <Footer />}
+    </>
   );
 }
 
-export default App;
+/* ================= APP ================= */
+export default function App() {
+  // 🔥 CREATED EVENTS STATE (GLOBAL)
+  const [createdEvents, setCreatedEvents] = useState([]);
+
+  // 🔥 FUNCTION PASSED TO EventCreation
+  const handleCreateEvent = (event) => {
+    setCreatedEvents((prev) => [event, ...prev]);
+  };
+
+  return (
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/aboutus" element={<AboutUS />} />
+          <Route path="/contactus" element={<ContactUs />} />
+
+          {/* ✅ PASS EVENTS TO GALLERY */}
+          <Route
+            path="/gallery"
+            element={<Gallery events={createdEvents} />}
+          />
+
+          {/* ✅ PASS FUNCTION TO EVENT CREATION */}
+          <Route
+            path="/eventcreation"
+            element={<EventCreation onCreateEvent={handleCreateEvent} />}
+          />
+        </Routes>
+      </Layout>
+    </Router>
+  );
+}
