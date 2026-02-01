@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 import Home from "./pages/Home";
@@ -37,28 +37,25 @@ export default function App() {
   };
 
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/aboutus" element={<AboutUS />} />
-          <Route path="/contactus" element={<ContactUs />} />
+  <Layout>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/aboutus" element={<AboutUS />} />
+      <Route path="/contactus" element={<ContactUs />} />
 
-          {/* ✅ PASS EVENTS TO GALLERY */}
-          <Route
-            path="/gallery"
-            element={<Gallery events={createdEvents} />}
-          />
+      <Route
+        path="/gallery"
+        element={<Gallery events={createdEvents} />}
+      />
 
-          {/* ✅ PASS FUNCTION TO EVENT CREATION */}
-          <Route
-            path="/eventcreation"
-            element={<EventCreation onCreateEvent={handleCreateEvent} />}
-          />
-        </Routes>
-      </Layout>
-    </Router>
-  );
+      <Route
+        path="/eventcreation"
+        element={<EventCreation onCreateEvent={handleCreateEvent} />}
+      />
+    </Routes>
+  </Layout>
+);
+
 }
